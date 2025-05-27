@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import { createUseStyles } from 'react-jss';
+import Counter from './Components/Counter';
+
+
+const useStyle = createUseStyles({
+
+  html: {
+    fontSize: '16px'
+  },
+  container: {
+    width: '90%',
+    maxWidth: '40rem',
+    margin: '3rem auto',
+    padding: '2rem',
+    backgroundColor: '#3a4346',
+    color: '#f0f6f8',
+    borderRadius: '6px',
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.25)',
+  }
+})
+
 
 function App() {
+
+  const style = useStyle();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={style.container}>
+      <Counter />
     </div>
+
   );
 }
 
